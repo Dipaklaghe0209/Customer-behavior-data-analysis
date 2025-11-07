@@ -1,161 +1,165 @@
-# Customer-behavior-data-analysis
-data analytics project showcasing project customer behavior analysis using  Excel Python SQL Power BI 
-# 🛒 Customer Shopping Behavior Analysis  
+# 📖 Customer Behavior Analysis
 
-![Python](https://img.shields.io/badge/Python-3.9-blue?logo=python)
-![SQL](https://img.shields.io/badge/SQL-MySQL-orange?logo=mysql)
-![PowerBI](https://img.shields.io/badge/Power%20BI-Data%20Visualization-yellow?logo=powerbi)
-![Excel](https://img.shields.io/badge/Excel-Data%20Cleaning-green?logo=microsoft-excel)
-![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-150458?logo=pandas)
-![Matplotlib](https://img.shields.io/badge/Matplotlib-Visualization-blueviolet?logo=plotly)
-![Seaborn](https://img.shields.io/badge/Seaborn-Statistical%20Plots-9cf)
-![License](https://img.shields.io/badge/License-MIT-lightgrey)
+A data analytics project investigating customer purchase patterns, product preferences, and discount behaviors to empower businesses to make data-driven decisions. This end-to-end analysis uses **Excel, Python, SQL,** and **Power BI** to extract actionable insights from customer data.
 
 ---
 
-## 📊 Project Overview  
-The **Customer Shopping Behavior Analysis** project explores 3,900 customer purchases to uncover insights into spending patterns, customer loyalty, and revenue drivers.  
-Using **Excel, Python, SQL, and Power BI**, this project demonstrates a complete end-to-end data analytics pipeline — from cleaning and exploration to visualization and business recommendations.
+## 🧩 Overview / Objective
+
+The primary goal of this project is to understand customer behavior by analyzing their interactions, purchase histories, and responsiveness to discounts. By uncovering underlying trends, businesses can tailor marketing strategies, optimize product offerings, and enhance customer retention.
 
 ---
 
-## 🧩 Objectives  
-- Analyze customer demographics and purchase trends  
-- Identify top-performing products and customer segments  
-- Evaluate the impact of discounts, subscriptions, and shipping preferences  
-- Provide actionable business recommendations  
+## ⚙️ Tools & Technologies Used
+
+- **Excel** – Initial data exploration and basic cleaning
+- **Python (Jupyter Notebooks)** – Data cleaning, transformation, and deep-dive analysis
+- **SQL** – Querying, aggregations, and advanced filtering
+- **Power BI** – Interactive dashboards for business insights
 
 ---
 
-## 🗂️ Dataset Overview  
-- **Total Records:** 3,900  
-- **Features:** 18  
-- **Geographic Coverage:** 50 locations  
-- **Missing Values:** 37 (handled using median imputation)  
+## 🗂️ Dataset Description
 
-| Column | Description |
-|--------|-------------|
-| `customer_id` | Unique identifier for each customer |
-| `gender` | Male / Female |
-| `age_group` | Categorized customer age group |
-| `item_purchased` | Product purchased |
-| `purchase_amount` | Total spent in each transaction |
-| `discount_applied` | Whether discount was applied (Yes/No) |
-| `subscription_status` | Subscriber or Non-subscriber |
-| `shipping_type` | Standard or Express |
-| `review_rating` | Customer satisfaction score |
-| `previous_purchases` | Number of past orders |
+The core dataset is customer purchase data, which may include:
+- `customer_id` – Unique customer identifier
+- `item_purchased` – Product or service bought
+- `purchase_date` – Timestamp of each transaction
+- `discount_applied` – Discount (%) on purchase, if any
+- `previous_purchases` – Number of transactions before current purchase
+- `purchase_amount` – Value of the transaction
+- `customer_type` – New or Returning
+- `payment_method` – Mode of payment (Credit Card, Cash, etc.)
+
+(*Sample files housed in the `/data` folder*)
 
 ---
 
-## 🧠 Tools & Technologies Used  
+## 🔍 Project Workflow
 
-| Tool | Purpose |
-|------|----------|
-| **Excel** | Data overview, cleaning, and descriptive analysis |
-| **Python (Pandas, NumPy, Matplotlib, Seaborn)** | Data preparation and EDA |
-| **SQL (MySQL)** | Query-based customer and product analysis |
-| **Power BI** | Interactive dashboards for visualization and storytelling |
+1. **Data Collection & Import**
+   - Gather purchase data (e.g., exports from CRM systems or e-commerce platforms).
+   - Consolidate using Excel and import into Python for processing.
 
----
+2. **Data Cleaning & Preparation**
+   - Remove duplicates, handle missing values using `data_cleaning.py` and `data_cleaning.ipynb`.
+   - Standardize data formats.
+   - Save cleaned data as CSV.
 
-## 🐍 Python Workflow  
-1. Imported and explored dataset using `pandas`  
-2. Cleaned and imputed missing values in `review_rating`  
-3. Created derived columns (age group, purchase frequency)  
-4. Visualized key patterns using `matplotlib` and `seaborn`  
-5. Exported cleaned dataset to database and Power BI  
+3. **Database Integration & SQL Analysis**
+   - Import data into a SQL database (`database_dump.sql`).
+   - Run analytical queries (`sql_queries.sql`) to segment customers, calculate purchase frequencies, and aggregate discount data.
 
-📁 Notebook: [`Customer_Shopping_Behavior_Analysis.ipynb`](./Customer_Shopping_Behavior_Analysis.ipynb)
+4. **Data Analysis in Python**
+   - Perform in-depth analysis (customer segmentation, trend detection) using `analysis_functions.py`.
 
----
+5. **Visualization & Storytelling**
+   - Prepare visualizations in Jupyter (`visualization_preparation.ipynb`).
+   - Export datasets for Power BI.
 
-## 🧾 SQL Insights  
+6. **Dashboard Development**
+   - Build interactive dashboards in Power BI (`powerbi_dashboard.pbix`).
+   - Showcase insights using visual storytelling.
 
-📂 SQL file: [`customer_behavior_sql_queries.sql`](./customer_behavior_sql_queries.sql)
-
-| Analysis | Description |
-|-----------|-------------|
-| **Revenue by Gender** | Compared male vs. female spending |
-| **Discount Effectiveness** | Found high-spending customers who used discounts |
-| **Top Products** | Ranked items by average review rating |
-| **Shipping Impact** | Compared average spend between shipping types |
-| **Subscription Impact** | Measured spend differences between subscribers and non-subscribers |
-| **Customer Segmentation** | Classified customers into *New*, *Returning*, and *Loyal* |
-| **Top 3 Products per Category** | Used window functions for ranking |
-| **Repeat Buyers Analysis** | Checked correlation between repeat buyers and subscriptions |
-| **Revenue by Age Group** | Summarized revenue by customer age bracket |
+7. **Reporting**
+   - Summarize findings in a comprehensive PDF report and presentation slides.
 
 ---
 
-## 📊 Power BI Dashboard Highlights  
+## 📊 Key Insights & Results
 
-### 🔹 Key Visuals  
-- **Revenue by Gender and Age Group**  
-- **Customer Segmentation (New, Returning, Loyal)**  
-- **Subscription vs. Non-subscription Analysis**  
-- **Top Performing Products**  
-- **Shipping Type vs. Average Spend**
-
-### 🔹 Business Insights  
-- Female customers generate **slightly higher total revenue**  
-- **Express shipping users** spend ~12% more per purchase  
-- **Subscribers** show **68% higher spend** and **78% loyalty rate**  
-- **Discount-driven customers** are high-value targets for premium offers  
-
-📸 *(Optional)* Add a screenshot of your Power BI dashboard here:
-
-yaml
-Copy code
+*Examples of business insights from this analysis:*
+- **Top Products:** Highest-selling items/categories based on frequency/amount.
+- **Discount Impact:** Analysis of how discounts influence purchase amount and frequency.
+- **Returning vs. New Customers:** Insights on retention rates and lifetime value.
+- **Customer Segments:** Identification of high-value vs. price-sensitive customers.
+- **Time Trends:** Purchase trends by month/day to aid inventory planning.
 
 ---
 
-## 💡 Strategic Recommendations  
-1. **Boost Subscriptions** – Highlight exclusive benefits to increase subscriber base  
-2. **Loyalty Programs** – Reward repeat buyers for long-term retention  
-3. **Targeted Marketing** – Focus on high-revenue age groups and express-shipping users  
-4. **Product Positioning** – Promote top-rated items in marketing campaigns  
-5. **Optimize Discounts** – Balance between driving sales and profit margins  
+## 📁 Folder Structure
+
+```bash
+customer-behavior-analysis/
+├── README.md
+├── data/
+│   ├── raw_data.xlsx
+│   ├── cleaned_data.csv
+│   └── database_dump.sql
+├── scripts/
+│   ├── data_cleaning.py
+│   ├── sql_queries.sql
+│   ├── analysis_functions.py
+│   └── export_to_powerbi.py
+├── notebooks/
+│   ├── data_cleaning.ipynb
+│   ├── exploratory_analysis.ipynb
+│   └── visualization_preparation.ipynb
+├── dashboards/
+│   ├── powerbi_dashboard.pbix
+│   └── screenshots/
+│       ├── overview_page.png
+│       └── insights_page.png
+├── reports/
+│   ├── project_report.pdf
+│   └── presentation.pptx
+└── requirements.txt
+```
 
 ---
 
-## 📁 Repository Structure  
-Customer-Shopping-Behavior-Analysis/
-│
-├── data/ # Raw and cleaned datasets
-├── Customer_Shopping_Behavior_Analysis.ipynb # Python EDA
-├── customer_behavior_sql_queries.sql # SQL queries
-├── Customer-Shopping-Behavior-Analysis.pptx # Project presentation
-├── PowerBI_Dashboard.png # Power BI visualization (optional)
-└── README.md # Project documentation
+## 🚀 How to Run / Reproduce the Project
 
-yaml
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Dipaklaghe0209/Customer-behavior-data-analysis.git
+   ```
 
+2. **Install dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
 
----
+3. **Put your raw data in `/data/raw_data.xlsx`.**
 
-## 🧩 Key Learnings  
-- Built an integrated workflow using **Excel → Python → SQL → Power BI**  
-- Strengthened skills in **data cleaning, feature engineering, and EDA**  
-- Improved ability to derive **business insights from analytical findings**  
+4. **Run data cleaning scripts**
+   - Via Jupyter: Open `notebooks/data_cleaning.ipynb`
+   - Or via script: `python scripts/data_cleaning.py`
 
----
+5. **Import cleaned data into SQL for further analysis**
+   - Use `/scripts/sql_queries.sql` as needed for aggregation.
 
-## 🚀 Future Enhancements  
-- Add ML models to predict purchase behavior or churn  
-- Automate data pipeline using Python scripts and SQL scheduling  
-- Deploy interactive dashboard with live data refresh  
+6. **Perform Python-based analytics**
+   - Explore and run analysis in `/notebooks/` or `/scripts/`.
 
----
+7. **Power BI Dashboard**
+   - Use `/dashboards/powerbi_dashboard.pbix` to view insights.
+   - Ensure exported data (`export_to_powerbi.py`) is up to date.
 
-## 👤 Author  
-
-**Dipak Laghe**  
-📍 Pune, India  
-💼 Data Analyst | Python | SQL | Power BI | Tableau  
-📧 [your.email@example.com]  
-🔗 [LinkedIn](https://www.linkedin.com/) | [GitHub](https://github.com/yourusername)
+8. **View the final report and presentation in `/reports/`**
 
 ---
 
-⭐ *If you found this project interesting, consider giving it a star on GitHub!*
+## 🔮 Future Improvements
+
+- Integrate machine learning models to predict customer churn and recommend products.
+- Automate Power BI dashboard refresh with new sales data.
+- Incorporate real-time data streaming for live dashboards.
+- Expand dataset with customer demographics and feedback for richer insights.
+- Deploy web-based dashboards for on-demand analytics.
+
+---
+
+## 👤 Author
+
+**Dipak Laghe**
+
+- [LinkedIn](https://www.linkedin.com/in/dipak-laghe-3b169a281/)
+- 📧 Email: dipaklaghe87.com
+
+
+
+## 🪪 License
+This project is licensed under the [MIT License](LICENSE).
+
+_This repository demonstrates an end-to-end approach in customer data analytics and implementation using Excel, Python, SQL, and Power BI, suitable for both beginners and professionals._
